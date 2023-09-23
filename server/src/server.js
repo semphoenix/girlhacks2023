@@ -1,7 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-const { NotFoundError } = require("../src/utils/errors");
+const { NotFoundError } = require("./utils/errors");
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
 
 const PORT = process.env.PORT || 3001;
 
@@ -19,8 +21,11 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello from server!" });
 });
 
-// const recipesRoutes = require("./api/recipes/recipes.controller");
-// app.use("/recipes", recipesRoutes);
+const usersRoutes = require("./api/users/users.controller");
+app.use("/users", usersRoutes);
+
+const workoutsRoutes = require("./api/workouts/workouts.controller");
+app.use("/workouts", workoutsRoutes);
 
 /** Handle 404 errors -- this matches everything */
 app.use(function (req, res, next) {
