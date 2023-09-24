@@ -8,6 +8,7 @@ import Navigation from "./navigation/Index";
 import { useTheme, IconRegistry } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { AuthorizeProvider } from "./contexts/user";
+import { MuscleProvider } from "./contexts/muscle";
 
 export default function App() {
   const theme = useTheme();
@@ -18,7 +19,9 @@ export default function App() {
       <ApplicationProvider {...eva} theme={eva.light}>
         <SafeAreaProvider>
           <AuthorizeProvider>
-            <Navigation />
+            <MuscleProvider>
+              <Navigation />
+            </MuscleProvider>
           </AuthorizeProvider>
           <StatusBar />
         </SafeAreaProvider>

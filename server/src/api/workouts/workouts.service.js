@@ -17,7 +17,7 @@ const createWorkouts = async ({ muscle, difficulty, time }) => {
       },
       {
         role: "user",
-        content: `Give me 3 workouts at a ${difficulty} level for ${muscle} that are done in under ${time}`,
+        content: `Give me an array of 3 workouts for ${muscle}`,
       },
     ],
     temperature: 0.5,

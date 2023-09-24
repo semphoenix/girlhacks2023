@@ -4,8 +4,10 @@ import * as React from "react";
 
 import SignUpScreen from "../screens/SignUpScreen";
 import SignInScreen from "../screens/SignInScreen";
-import HomeScreen from "../screens/HomeScreen";
+// import HomeScreen from "../screens/HomeScreen";
 import LinkingConfiguration from "./LinkingConfiguration";
+import BodyScreen from "../screens/BodyScreen";
+import GenWorkoutsScreen from "../screens/GenWorkoutsScreen";
 
 export default function Navigation() {
   return (
@@ -32,7 +34,12 @@ const RootNavigator = () => {
       />
       <Stack.Screen
         name="Home"
-        component={HomeScreen}
+        component={BodyScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="GenWorkouts"
+        component={GenWorkoutsScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

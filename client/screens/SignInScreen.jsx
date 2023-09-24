@@ -74,6 +74,10 @@ export default SignInScreen = ({ navigation }) => {
         style={styles.backgroundImage}
       >
         <View style={styles.container}>
+          {/* <Image
+            source={require("../assets/logo.png")}
+            style={styles.imageStyle}
+          /> */}
           <Text style={styles.text} category="h1">
             Sign In
           </Text>
@@ -141,4 +145,9 @@ const styles = StyleSheet.create({
   text: {
     color: "white",
   },
+  // imageStyle: {
+  //   width: 100, // Set your desired width
+  //   height: 100, // Set your desired height
+  //   // Other styles can be added as needed
+  // },
 });
